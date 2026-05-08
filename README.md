@@ -33,8 +33,8 @@ Sistema completo para sellers gerenciarem produtos, estoque, vendas e relatório
 
 **1. Clone o repositório**
 ```bash
-git clone https://github.com/seu-usuario/Projeto-Mini-Mercado-Full-Stack.git
-cd Projeto-Mini-Mercado-Full-Stack
+[git clone https://github.com/seu-usuario/Projeto-Mini-Mercado-Full-Stack.git](https://github.com/viniciuzff/Projeto-Mini-Mercado-FrontEnd.git)
+cd Projeto-Mini-Mercado-FrontEnd
 ```
 
 **2. Instale as dependências**
