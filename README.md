@@ -1,16 +1,124 @@
-# React + Vite
+# 🛒 SellerOS — Sistema de Gestão de Mini Mercado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema completo para sellers gerenciarem produtos, estoque, vendas e relatórios com autenticação segura e dashboard analítico.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧱 Tecnologias
 
-## React Compiler
+**Backend**
+- Python + Flask (API REST)
+- SQLAlchemy (ORM)
+- JWT Authentication
+- Twilio (WhatsApp)
+- SQLite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend**
+- React.js + Vite
+- React Router DOM
+- Fetch API
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Como rodar o projeto
+
+### Pré-requisitos
+- Python 3.10+
+- Node.js 18+
+- Conta no [Twilio](https://www.twilio.com)
+
+---
+
+### 🔧 Backend
+
+**1. Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/Projeto-Mini-Mercado-Full-Stack.git
+cd Projeto-Mini-Mercado-Full-Stack
+```
+
+**2. Instale as dependências**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Crie o arquivo `.env` na raiz do projeto**
+SECRET_KEY=sua_chave_secreta
+TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TWILIO_AUTH_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TWILIO_FROM=whatsapp:+14155238886
+TWILIO_TO=whatsapp:+55119XXXXXXXX
+
+**4. Inicie o servidor**
+```bash
+python run.py
+```
+
+API disponível em: `http://127.0.0.1:5000`
+
+---
+
+### 🎨 Frontend
+
+**1. Entre na pasta do frontend**
+```bash
+cd Projeto-Mini-Mercado-FrontEnd
+```
+
+**2. Instale as dependências**
+```bash
+npm install
+```
+
+**3. Inicie o servidor**
+```bash
+npm run dev
+```
+
+Frontend disponível em: `http://localhost:5173`
+
+---
+
+## 📡 Endpoints da API
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| POST | `/api/sellers` | Cadastrar seller |
+| POST | `/api/sellers/activate` | Ativar conta |
+| POST | `/api/auth/login` | Login |
+| GET | `/api/products` | Listar produtos |
+| POST | `/api/products` | Criar produto |
+| PUT | `/api/products/:id` | Editar produto |
+| PATCH | `/api/products/:id/inactivate` | Inativar produto |
+| PATCH | `/api/products/:id/activate` | Ativar produto |
+| GET | `/api/sales` | Listar vendas |
+| POST | `/api/sales` | Registrar venda |
+| GET | `/api/dashboard` | Métricas do dashboard |
+
+---
+
+## 🔄 Fluxo do Sistema
+
+1. Seller se cadastra
+2. Recebe código via WhatsApp
+3. Ativa a conta com o código
+4. Faz login e recebe token JWT
+5. Cadastra produtos com imagem
+6. Registra vendas
+7. Visualiza dashboard com métricas
+
+---
+
+## 📊 Regras de Negócio
+
+- Seller só acessa seus próprios dados
+- Produto inativo não pode ser vendido
+- Estoque nunca pode ficar negativo
+- Preço da venda é fixado no momento da venda
+- Seller inativo não pode fazer login
+
+---
+
+## 👨‍💻 Desenvolvido por
+
+Vinicius Ferreira, Murillo Souza, Tulio Costa.

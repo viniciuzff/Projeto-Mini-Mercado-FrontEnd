@@ -27,14 +27,14 @@ export default function Login() {
     <div style={s.page}>
       <div style={s.left}>
         <div style={s.brand}>
-          <span style={s.brandIcon}></span>
-          <span style={s.brandName}>Sistema de Gestão de Mini Mercado</span>
+          <div style={s.brandIcon}>S</div>
+          <span style={s.brandName}>SellerOS</span>
         </div>
         <div style={s.hero}>
           <h1 style={s.heroTitle}>Gerencie seu negócio com simplicidade</h1>
-          <p style={s.heroSub}>Controle estoque, vendas e relatórios em um só lugar.</p>
+          <p style={s.heroSub}>Controle de estoque, vendas e relatórios em um só lugar.</p>
           <div style={s.stats}>
-            <div style={s.stat}><span style={s.statNum}>100%</span><span style={s.statLabel}>Online</span></div>
+            <div style={s.stat}><span style={s.statNum}>100%</span><span style={s.statLabel}>On-line</span></div>
             <div style={s.statDivider}/>
             <div style={s.stat}><span style={s.statNum}>∞</span><span style={s.statLabel}>Produtos</span></div>
             <div style={s.statDivider}/>
@@ -52,35 +52,19 @@ export default function Login() {
 
           <form onSubmit={handleSubmit}>
             <div style={s.field}>
-              <label style={s.label}>Email</label>
-              <input
-                style={s.input}
-                type="email"
-                placeholder="seu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+              <label style={s.label}>E-mail</label>
+              <input style={s.input} type="email" placeholder="seu@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div style={s.field}>
               <label style={s.label}>Senha</label>
-              <input
-                style={s.input}
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <input style={s.input} type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </div>
             <button style={loading ? s.btnDisabled : s.btn} type="submit" disabled={loading}>
               {loading ? "Entrando..." : "Entrar"}
             </button>
           </form>
 
-          <p style={s.footer}>
-            Não tem conta? <Link to="/register">Cadastre-se grátis</Link>
-          </p>
+          <p style={s.footer}>Não tem conta? <Link to="/register" style={s.link}>Cadastre-se grátis</Link></p>
         </div>
       </div>
     </div>
@@ -89,27 +73,28 @@ export default function Login() {
 
 const s = {
   page: { display: "flex", minHeight: "100vh" },
-  left: { flex: 1, background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between" },
+  left: { flex: 1, background: "linear-gradient(135deg, #0f1117 0%, #1a1d2e 100%)", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid #1e2130" },
   brand: { display: "flex", alignItems: "center", gap: "12px" },
-  brandIcon: { fontSize: "28px" },
-  brandName: { fontSize: "20px", fontWeight: "600", color: "#fff" },
-  hero: { flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "16px" },
-  heroTitle: { fontFamily: "'DM Serif Display', serif", fontSize: "42px", color: "#fff", lineHeight: 1.2, maxWidth: "400px" },
-  heroSub: { fontSize: "16px", color: "rgba(255,255,255,0.75)", maxWidth: "360px", lineHeight: 1.6 },
-  stats: { display: "flex", alignItems: "center", gap: "24px", marginTop: "16px" },
+  brandIcon: { width: "36px", height: "36px", background: "linear-gradient(135deg, #6366f1, #8b5cf6)", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: "700", fontSize: "16px" },
+  brandName: { fontSize: "18px", fontWeight: "600", color: "#fff" },
+  hero: { flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "20px" },
+  heroTitle: { fontFamily: "'DM Serif Display', serif", fontSize: "42px", color: "#fff", lineHeight: 1.2, maxWidth: "420px" },
+  heroSub: { fontSize: "16px", color: "#6b7280", maxWidth: "360px", lineHeight: 1.6 },
+  stats: { display: "flex", alignItems: "center", gap: "28px", marginTop: "16px" },
   stat: { display: "flex", flexDirection: "column", gap: "4px" },
-  statNum: { fontSize: "24px", fontWeight: "600", color: "#fff" },
-  statLabel: { fontSize: "12px", color: "rgba(255,255,255,0.6)", textTransform: "uppercase", letterSpacing: "0.05em" },
-  statDivider: { width: "1px", height: "40px", background: "rgba(255,255,255,0.2)" },
-  right: { width: "480px", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px" },
+  statNum: { fontSize: "24px", fontWeight: "700", color: "#fff" },
+  statLabel: { fontSize: "11px", color: "#4b5280", textTransform: "uppercase", letterSpacing: "0.08em" },
+  statDivider: { width: "1px", height: "40px", background: "#1e2130" },
+  right: { width: "480px", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px", background: "#0f1117" },
   card: { width: "100%", maxWidth: "380px" },
-  title: { fontSize: "28px", fontWeight: "600", color: "#1c1917", marginBottom: "8px" },
-  subtitle: { fontSize: "14px", color: "#78716c", marginBottom: "32px" },
-  error: { background: "#fef2f2", border: "1px solid #fecaca", color: "#dc2626", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", marginBottom: "16px" },
+  title: { fontSize: "26px", fontWeight: "700", color: "#fff", marginBottom: "8px" },
+  subtitle: { fontSize: "14px", color: "#6b7280", marginBottom: "36px" },
+  error: { background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#ef4444", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", marginBottom: "16px" },
   field: { marginBottom: "20px" },
-  label: { display: "block", fontSize: "13px", fontWeight: "500", color: "#44403c", marginBottom: "6px" },
-  input: { width: "100%", padding: "12px 14px", border: "1.5px solid #e8e5e0", borderRadius: "10px", fontSize: "14px", outline: "none", transition: "border 0.2s", background: "#fafaf9" },
-  btn: { width: "100%", padding: "13px", background: "#16a34a", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "pointer", marginTop: "8px", transition: "background 0.2s" },
-  btnDisabled: { width: "100%", padding: "13px", background: "#86efac", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "not-allowed", marginTop: "8px" },
-  footer: { textAlign: "center", marginTop: "24px", fontSize: "14px", color: "#78716c" },
+  label: { display: "block", fontSize: "12px", fontWeight: "500", color: "#6b7280", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.05em" },
+  input: { width: "100%", padding: "12px 14px", border: "1px solid #1e2130", borderRadius: "10px", fontSize: "14px", outline: "none", background: "#13151f", color: "#fff", boxSizing: "border-box" },
+  btn: { width: "100%", padding: "13px", background: "linear-gradient(135deg, #6366f1, #8b5cf6)", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "pointer", marginTop: "8px" },
+  btnDisabled: { width: "100%", padding: "13px", background: "#1e2236", color: "#4b5280", border: "none", borderRadius: "10px", fontSize: "15px", cursor: "not-allowed", marginTop: "8px" },
+  footer: { textAlign: "center", marginTop: "24px", fontSize: "14px", color: "#6b7280" },
+  link: { color: "#818cf8" },
 };

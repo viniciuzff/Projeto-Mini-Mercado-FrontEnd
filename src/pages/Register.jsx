@@ -29,14 +29,14 @@ export default function Register() {
     <div style={s.page}>
       <div style={s.left}>
         <div style={s.brand}>
-          <span style={s.brandIcon}>🛒</span>
-          <span style={s.brandName}>Mini Mercado</span>
+          <div style={s.brandIcon}>S</div>
+          <span style={s.brandName}>SellerOS</span>
         </div>
         <div style={s.hero}>
           <h1 style={s.heroTitle}>Comece a vender melhor hoje</h1>
           <p style={s.heroSub}>Cadastre-se gratuitamente e tenha controle total do seu negócio.</p>
           <div style={s.features}>
-            {["✓ Controle de estoque em tempo real", "✓ Registro de vendas simplificado", "✓ Dashboard com métricas", "✓ Ativação via WhatsApp"].map((f, i) => (
+            {["✓ Controle de estoque em tempo real", "✓ Registro de vendas simplificado", "✓ Painel de controle com métricas", "✓ Ativação via WhatsApp"].map((f, i) => (
               <div key={i} style={s.feature}>{f}</div>
             ))}
           </div>
@@ -63,7 +63,7 @@ export default function Register() {
               </div>
             </div>
             <div style={s.field}>
-              <label style={s.label}>Email</label>
+              <label style={s.label}>E-mail</label>
               <input style={s.input} name="email" type="email" placeholder="seu@email.com" onChange={handleChange} required />
             </div>
             <div style={s.row}>
@@ -81,9 +81,7 @@ export default function Register() {
             </button>
           </form>
 
-          <p style={s.footer}>
-            Já tem conta? <Link to="/login">Entrar</Link>
-          </p>
+          <p style={s.footer}>Já tem conta? <Link to="/login" style={s.link}>Entrar</Link></p>
         </div>
       </div>
     </div>
@@ -92,26 +90,27 @@ export default function Register() {
 
 const s = {
   page: { display: "flex", minHeight: "100vh" },
-  left: { flex: 1, background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between" },
+  left: { flex: 1, background: "linear-gradient(135deg, #0f1117 0%, #1a1d2e 100%)", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid #1e2130" },
   brand: { display: "flex", alignItems: "center", gap: "12px" },
-  brandIcon: { fontSize: "28px" },
-  brandName: { fontSize: "20px", fontWeight: "600", color: "#fff" },
+  brandIcon: { width: "36px", height: "36px", background: "linear-gradient(135deg, #6366f1, #8b5cf6)", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: "700", fontSize: "16px" },
+  brandName: { fontSize: "18px", fontWeight: "600", color: "#fff" },
   hero: { flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "20px" },
-  heroTitle: { fontFamily: "'DM Serif Display', serif", fontSize: "40px", color: "#fff", lineHeight: 1.2, maxWidth: "400px" },
-  heroSub: { fontSize: "16px", color: "rgba(255,255,255,0.75)", maxWidth: "360px", lineHeight: 1.6 },
+  heroTitle: { fontFamily: "'DM Serif Display', serif", fontSize: "40px", color: "#fff", lineHeight: 1.2, maxWidth: "420px" },
+  heroSub: { fontSize: "16px", color: "#6b7280", maxWidth: "360px", lineHeight: 1.6 },
   features: { display: "flex", flexDirection: "column", gap: "10px", marginTop: "8px" },
-  feature: { fontSize: "14px", color: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", gap: "8px" },
-  right: { width: "560px", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px" },
+  feature: { fontSize: "14px", color: "#9ca3af" },
+  right: { width: "560px", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px", background: "#0f1117" },
   card: { width: "100%", maxWidth: "460px" },
-  title: { fontSize: "28px", fontWeight: "600", color: "#1c1917", marginBottom: "8px" },
-  subtitle: { fontSize: "14px", color: "#78716c", marginBottom: "32px" },
-  error: { background: "#fef2f2", border: "1px solid #fecaca", color: "#dc2626", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", marginBottom: "16px" },
-  successBox: { background: "#f0fdf4", border: "1px solid #86efac", color: "#16a34a", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", marginBottom: "16px" },
+  title: { fontSize: "26px", fontWeight: "700", color: "#fff", marginBottom: "8px" },
+  subtitle: { fontSize: "14px", color: "#6b7280", marginBottom: "32px" },
+  error: { background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#ef4444", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", marginBottom: "16px" },
+  successBox: { background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.3)", color: "#10b981", padding: "12px 16px", borderRadius: "8px", fontSize: "14px", marginBottom: "16px" },
   row: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" },
   field: { marginBottom: "16px" },
-  label: { display: "block", fontSize: "13px", fontWeight: "500", color: "#44403c", marginBottom: "6px" },
-  input: { width: "100%", padding: "11px 14px", border: "1.5px solid #e8e5e0", borderRadius: "10px", fontSize: "14px", outline: "none", background: "#fafaf9" },
-  btn: { width: "100%", padding: "13px", background: "#16a34a", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "pointer", marginTop: "8px" },
-  btnDisabled: { width: "100%", padding: "13px", background: "#86efac", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "not-allowed", marginTop: "8px" },
-  footer: { textAlign: "center", marginTop: "24px", fontSize: "14px", color: "#78716c" },
+  label: { display: "block", fontSize: "12px", fontWeight: "500", color: "#6b7280", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.05em" },
+  input: { width: "100%", padding: "11px 14px", border: "1px solid #1e2130", borderRadius: "10px", fontSize: "14px", outline: "none", background: "#13151f", color: "#fff", boxSizing: "border-box" },
+  btn: { width: "100%", padding: "13px", background: "linear-gradient(135deg, #6366f1, #8b5cf6)", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "pointer", marginTop: "8px" },
+  btnDisabled: { width: "100%", padding: "13px", background: "#1e2236", color: "#4b5280", border: "none", borderRadius: "10px", fontSize: "15px", cursor: "not-allowed", marginTop: "8px" },
+  footer: { textAlign: "center", marginTop: "24px", fontSize: "14px", color: "#6b7280" },
+  link: { color: "#818cf8" },
 };
