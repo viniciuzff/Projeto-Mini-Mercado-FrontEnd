@@ -1,3 +1,6 @@
+#Integrantes: Vinicius Ferreira de Freitas, Murillo Souza, Tulio Costa.
+
+
 # 🛒 SellerOS — Sistema de Gestão de Mini Mercado
 
 Sistema completo para sellers gerenciarem produtos, estoque, vendas e relatórios com autenticação segura e dashboard analítico.
