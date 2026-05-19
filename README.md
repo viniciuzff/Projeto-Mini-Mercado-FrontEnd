@@ -1,4 +1,4 @@
-#Integrantes: Vinicius Ferreira de Freitas, Murillo Souza, Tulio Costa.
+  # Integrantes: Vinicius Ferreira de Freitas, Murillo Souza, Tulio Costa. 4ºA ADS Noite - Impacta Faculdade 
 
 
 # 🛒 SellerOS — Sistema de Gestão de Mini Mercado
