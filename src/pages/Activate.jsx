@@ -90,7 +90,7 @@ export default function Activate() {
 
 const s = {
   page: { display: "flex", minHeight: "100vh" },
-  left: { flex: 1, background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between" },
+  left: { flex: 1, background: "linear-gradient(135deg, #000000 0%, #000201 100%)", padding: "48px", display: "flex", flexDirection: "column", justifyContent: "space-between" },
   brand: { display: "flex", alignItems: "center", gap: "12px" },
   brandIcon: { fontSize: "28px" },
   brandName: { fontSize: "20px", fontWeight: "600", color: "#fff" },
@@ -111,7 +111,7 @@ const s = {
   label: { display: "block", fontSize: "13px", fontWeight: "500", color: "#44403c", marginBottom: "6px" },
   input: { width: "100%", padding: "12px 14px", border: "1.5px solid #e8e5e0", borderRadius: "10px", fontSize: "14px", outline: "none", background: "#fafaf9" },
   codeInput: { width: "100%", padding: "16px 14px", border: "1.5px solid #e8e5e0", borderRadius: "10px", fontSize: "28px", fontWeight: "600", letterSpacing: "0.5em", textAlign: "center", outline: "none", background: "#fafaf9" },
-  btn: { width: "100%", padding: "13px", background: "#16a34a", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "pointer", marginTop: "8px" },
+  btn: { width: "100%", padding: "13px", background: "#1e2236", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "pointer", marginTop: "8px" },
   btnDisabled: { width: "100%", padding: "13px", background: "#86efac", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", fontWeight: "500", cursor: "not-allowed", marginTop: "8px" },
   footer: { textAlign: "center", marginTop: "24px", fontSize: "14px", color: "#78716c" },
 };

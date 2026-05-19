@@ -78,4 +78,6 @@ export const createSale = (data) =>
 export const getDashboard = () =>
   fetch(`${BASE_URL}/api/dashboard`, { headers: headers() }).then((res) =>
     res.json()
-  );
+  )
+
+  
